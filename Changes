@@ -1,5 +1,13 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
+0.001001 2013-12-01T19:26:20Z
+ - Document attributes.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001000, see Changes.deps{,.all,.dev} for
+   details
+ - develop: +1 ↑1 -1
+
 0.001000 2013-12-01T10:03:15Z
  - First version.
 

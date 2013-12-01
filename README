@@ -2,7 +2,63 @@ NAME
     Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
 
 VERSION
-    version 0.001000
+    version 0.001001
+
+ATTRIBUTES
+  "normal_form"
+    Determines which *normal form* is used.
+
+    Default is : "numify"
+
+  "mantissa"
+    Determines the mandatory length of the "mantissa" for the "numify"
+    normal form.
+
+    Default is : 6
+
+    Which yields:
+
+          1.001001
+         10.001001
+        100.001001
+       1000.001001
+
+    Etc.
+
+NORMAL FORMS
+  "normal"
+    Normalizes to the notation:
+
+        v1
+        v1.2
+        v1.2.3
+        v1.2.3.4
+
+  "normal_3"
+    Normalizes to the notation
+
+        1.2.3
+        1.2.3.4
+
+    Note: Due to the absence of the leading "v", 3, is the minimum number of
+    places that can be represented in this notation.
+
+    Accidentally normalizing to
+
+        1.2
+
+    In this form should raise a fatal exception.
+
+  "numify"
+    Normalizes to the notation
+
+        1.23456789
+        | ^------^--- The Mantissa
+        |
+        ^------------ Integer part.
+
+    And the length for mantissa is forced by "mantissa", either *truncating*
+    to "mantissa" length, or "paddding" to "mantissa" length with 0's
 
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
