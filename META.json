@@ -214,7 +214,7 @@
             "class" : "Dist::Zilla::Plugin::Git::NextVersion::Sanitized",
             "config" : {
                "Dist::Zilla::Role::Version::Sanitize" : {
-                  "mantissa" : 6,
+                  "mantissa" : "6",
                   "normal_form" : "numify"
                }
             },
