@@ -5,10 +5,10 @@ use Test::More;
 use Path::Tiny;
 use File::Copy::Recursive qw( rcopy );
 
-my $dist    = 'fake_dist_05';
-my $orig    = Path::Tiny->new('.')->absolute;
-my $source  = Path::Tiny->new('.')->child('corpus')->child($dist);
-my $tempdir = Path::Tiny->tempdir;
+my $dist          = 'fake_dist_05';
+my $orig          = Path::Tiny->new('.')->absolute;
+my $source        = Path::Tiny->new('.')->child('corpus')->child($dist);
+my $tempdir       = Path::Tiny->tempdir;
 my $chdir_tempdir = Path::Tiny->tempdir;
 
 rcopy( "$source", "$tempdir" );
