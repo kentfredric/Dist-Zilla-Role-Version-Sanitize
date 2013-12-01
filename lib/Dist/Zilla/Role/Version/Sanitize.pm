@@ -45,14 +45,14 @@ sub _normalize_numify {
     }
     $self->log( [ 'MANTISSA LENGTH != EXPECTED: WANTED %s, GOT %s, CORRECTING', $want, $got ] );
     if ( $want < $got ) {
-      my $newman = substr( $mantissa, 0, $want );
+      my $newman = substr $mantissa, 0, $want;
       return $sig . q[.] . $newman;
     }
     my $need = $want - $got;
     return $sig . q[.] . $mantissa . ( q[0] x $need );
   }
   require Carp;
-  return Carp::croak("Could not parse mantissa from numified version");
+  return Carp::croak(qq[Could not parse mantissa from numified version $version]);
 }
 
 my %normal_forms = (
@@ -61,8 +61,23 @@ my %normal_forms = (
   numify   => '_normalize_numify',
 );
 
-has normal_form => ( is => ro =>, isa => enum( [ keys %normal_forms ] ), is => 'ro', lazy => 1, default => sub { 'numify' } );
-has mantissa => ( is => ro =>, isa => 'Int', is => 'ro', lazy => 1, default => sub { 6 } );
+has normal_form => (
+  is => ro =>,
+  isa => enum( [ keys %normal_forms ] ),
+  is => 'ro',
+  lazy    => 1,
+  default => sub { return 'numify' }
+);
+has mantissa => (
+  is      => ro =>,
+  isa     => 'Int',
+  is      => 'ro',
+  lazy    => 1,
+  default => sub {
+    ## no critic (ProhibitMagicNumbers
+    return 6;
+  }
+);
 
 around provide_version => sub {
   my ( $orig, $self, @args ) = @_;
@@ -80,7 +95,7 @@ around dump_config => sub {
     normal_form => $self->normal_form,
     mantissa    => $self->mantissa,
   };
-  $config->{ '' . __PACKAGE__ } = $own_config;
+  $config->{ q[] . __PACKAGE__ } = $own_config;
   return $config;
 };
 
