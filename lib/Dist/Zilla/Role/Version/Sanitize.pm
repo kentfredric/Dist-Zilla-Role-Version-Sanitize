@@ -8,6 +8,17 @@ package Dist::Zilla::Role::Version::Sanitize;
 use Moose::Role;
 use Moose::Util::TypeConstraints qw(enum);
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Role::Version::Sanitize",
+    "interface":"role"
+}
+
+=end MetaPOD::JSON
+
+=cut
+
 sub _normalize_normal {
   my ( $self, $orig ) = @_;
   require version;
@@ -49,11 +60,58 @@ sub _normalize_numify {
   return Carp::croak(qq[Could not parse mantissa from numified version $version]);
 }
 
+=head1 NORMAL FORMS
+
+=head2 C<normal>
+
+Normalises to the notation:
+
+    v1
+    v1.2
+    v1.2.3
+    v1.2.3.4
+
+=head2 C<normal_3>
+
+Normalises to the notation
+
+    1.2.3
+    1.2.3.4
+
+Note: Due to the absence of the leading C<v>, 3, is the minimum number of places that can be represented in this notation.
+
+Accidentally normalising to
+
+    1.2
+
+In this form should raise a fatal exception.
+
+=head2 C<numify>
+
+Normalises to the notation
+
+    1.23456789
+    | ^------^--- The Mantissa
+    |
+    ^------------ Integer part.
+
+And the length for mantissa is forced by C<mantissa>, either I<truncating> to C<mantissa> length, or C<paddding> to C<mantissa> length with C<0>'s
+
+=cut
+
 my %normal_forms = (
   normal   => '_normalize_normal',
   normal_3 => '_normalize_normal_3',
   numify   => '_normalize_numify',
 );
+
+=attr C<normal_form>
+
+Determines which L<< I<normal form>|/NORMAL FORMS >> is used.
+
+Default is : B<< C<numify> >>
+
+=cut
 
 has normal_form => (
   is => ro =>,
@@ -62,6 +120,24 @@ has normal_form => (
   lazy    => 1,
   default => sub { return 'numify' },
 );
+
+=attr C<mantissa>
+
+Determines the mandatory length of the C<mantissa> for the L<< C<numify>|/numify >> normal form.
+
+Default is : B<< C<6> >>
+
+Which yeilds:
+
+      1.001001
+     10.001001
+    100.001001
+   1000.001001
+
+Etc.
+
+=cut
+
 has mantissa => (
   is      => ro =>,
   isa     => 'Int',
