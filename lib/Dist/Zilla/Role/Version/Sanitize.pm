@@ -183,7 +183,7 @@ In this form should raise a fatal exception.
 
 =head2 C<numify>
 
-Normalises to the notation
+Normalizes to the notation
 
     1.23456789
     | ^------^--- The Mantissa
