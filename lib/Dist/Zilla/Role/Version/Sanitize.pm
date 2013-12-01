@@ -23,7 +23,7 @@ sub _normalize_normal {
 sub _normalize_numify {
   my ( $self, $orig ) = @_;
   require version;
-  my $num = version->parse($orig)->numify;
+  my $version = version->parse($orig)->numify;
   if ( $version =~ /(^\d+)[.](.*$)/ ) {
     my ( $sig, $mantissa ) = ( $1, $2 );
     my $got  = length $mantissa;
