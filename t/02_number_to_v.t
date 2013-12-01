@@ -6,8 +6,10 @@ use Path::Tiny;
 use File::Copy::Recursive qw( rcopy );
 
 my $dist    = 'fake_dist_02';
+my $orig    = Path::Tiny->new('.')->absolute;
 my $source  = Path::Tiny->new('.')->child('corpus')->child($dist);
 my $tempdir = Path::Tiny->tempdir;
+my $chdir_tempdir = Path::Tiny->tempdir;
 
 rcopy( "$source", "$tempdir" );
 
@@ -21,12 +23,14 @@ my $builder;
 
 is(
   exception {
+    chdir $chdir_tempdir;
     $builder = Builder->from_config( { dist_root => "$tempdir" } );
     $builder->build;
   },
   undef,
   "dzil build ran ok"
 );
+chdir $orig;
 is( $builder->version, 'v1.200.300', 'Version is forced to vstring' );
 
 done_testing;
