@@ -136,7 +136,7 @@ Determines the mandatory length of the C<mantissa> for the L<< C<numify>|/numify
 
 Default is : B<< C<6> >>
 
-Which yeilds:
+Which yields:
 
       1.001001
      10.001001
@@ -159,7 +159,7 @@ Etc.
 
 =head2 C<normal>
 
-Normalises to the notation:
+Normalizes to the notation:
 
     v1
     v1.2
@@ -168,14 +168,14 @@ Normalises to the notation:
 
 =head2 C<normal_3>
 
-Normalises to the notation
+Normalizes to the notation
 
     1.2.3
     1.2.3.4
 
 Note: Due to the absence of the leading C<v>, 3, is the minimum number of places that can be represented in this notation.
 
-Accidentally normalising to
+Accidentally normalizing to
 
     1.2
 

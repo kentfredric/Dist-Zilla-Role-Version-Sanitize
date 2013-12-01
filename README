@@ -16,7 +16,7 @@ ATTRIBUTES
 
     Default is : 6
 
-    Which yeilds:
+    Which yields:
 
           1.001001
          10.001001
@@ -27,7 +27,7 @@ ATTRIBUTES
 
 NORMAL FORMS
   "normal"
-    Normalises to the notation:
+    Normalizes to the notation:
 
         v1
         v1.2
@@ -35,7 +35,7 @@ NORMAL FORMS
         v1.2.3.4
 
   "normal_3"
-    Normalises to the notation
+    Normalizes to the notation
 
         1.2.3
         1.2.3.4
@@ -43,7 +43,7 @@ NORMAL FORMS
     Note: Due to the absence of the leading "v", 3, is the minimum number of
     places that can be represented in this notation.
 
-    Accidentally normalising to
+    Accidentally normalizing to
 
         1.2
 
