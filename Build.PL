@@ -32,11 +32,9 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
-    "Cwd" => 0,
     "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000000",
     "File::Copy::Recursive" => 0,
     "File::ShareDir" => 0,
-    "Path::FindDev" => 0,
     "Path::Tiny" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
@@ -46,12 +44,10 @@ my %module_build_args = (
 
 
 my %fallback_build_requires = (
-  "Cwd" => 0,
   "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000000",
   "File::Copy::Recursive" => 0,
   "File::ShareDir" => 0,
   "Module::Build" => "0.4203",
-  "Path::FindDev" => 0,
   "Path::Tiny" => 0,
   "Test::DZil" => 0,
   "Test::Fatal" => 0,
