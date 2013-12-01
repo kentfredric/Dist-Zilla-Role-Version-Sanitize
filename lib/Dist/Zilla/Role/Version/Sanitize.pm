@@ -24,9 +24,10 @@ sub _normalize_normal_3 {
   my ( $self, $orig ) = @_;
   require version;
   my $v = version->parse($orig)->normal;
-  $v =~ s/^v//;
-  if ( $v !~ /^\d+[.]\d+[.]\d+/ ) {
-    die "Normalised string $v does not have a minimum of 3 parts";
+  $v =~ s/\Av//msx;
+  if ( $v !~ /\A\d+[.]\d+[.]\d+/msx ) {
+    require Carp;
+    return Carp::croak("Normalised string $v does not have a minimum of 3 parts");
   }
   return $v;
 }
@@ -35,7 +36,7 @@ sub _normalize_numify {
   my ( $self, $orig ) = @_;
   require version;
   my $version = version->parse($orig)->numify;
-  if ( $version =~ /(^\d+)[.](.*$)/ ) {
+  if ( $version =~ /(\A\d+)[.](.*$)/msx ) {
     my ( $sig, $mantissa ) = ( $1, $2 );
     my $got  = length $mantissa;
     my $want = $self->mantissa;
@@ -47,14 +48,11 @@ sub _normalize_numify {
       my $newman = substr( $mantissa, 0, $want );
       return $sig . q[.] . $newman;
     }
-    if ( $want > $got ) {
-      my $need = $want - $got;
-      return $sig . q[.] . $mantissa . ( q[0] x $need );
-    }
+    my $need = $want - $got;
+    return $sig . q[.] . $mantissa . ( q[0] x $need );
   }
-  else {
-    die "Could not parse mantissa from numified version";
-  }
+  require Carp;
+  return Carp::croak("Could not parse mantissa from numified version");
 }
 
 my %normal_forms = (

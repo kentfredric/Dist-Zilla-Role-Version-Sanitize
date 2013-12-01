@@ -23,6 +23,7 @@ my %module_build_args = (
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "Carp" => 0,
     "Moose::Role" => 0,
     "Moose::Util::TypeConstraints" => 0,
     "perl" => "5.006",

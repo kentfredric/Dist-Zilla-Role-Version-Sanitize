@@ -48,6 +48,7 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
+eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Bootstrap::lib','0.04000000') };
 eval { $v .= pmver('File::Copy::Recursive','any version') };
 eval { $v .= pmver('File::ShareDir','any version') };
