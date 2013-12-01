@@ -66,7 +66,7 @@ has normal_form => (
   isa => enum( [ keys %normal_forms ] ),
   is => 'ro',
   lazy    => 1,
-  default => sub { return 'numify' }
+  default => sub { return 'numify' },
 );
 has mantissa => (
   is      => ro =>,
@@ -76,7 +76,7 @@ has mantissa => (
   default => sub {
     ## no critic (ProhibitMagicNumbers
     return 6;
-  }
+  },
 );
 
 around provide_version => sub {
