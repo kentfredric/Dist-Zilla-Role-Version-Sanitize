@@ -1,4 +1,6 @@
-0.001001
+0.001002
+
+0.001001 2013-12-01T19:26:20Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
 
