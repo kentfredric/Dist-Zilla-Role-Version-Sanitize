@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Role::Version::Sanitize::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Role::Version::Sanitize::VERSION = '0.001001';
+  $Dist::Zilla::Role::Version::Sanitize::VERSION = '0.001002';
 }
 
 # ABSTRACT: Sanitize a version from a plugin
@@ -89,7 +89,9 @@ around provide_version => sub {
   my $v      = $orig->( $self, @args );
   my $method = $normal_forms{ $self->normal_form };
   my $fixed  = $self->$method($v);
-  $self->log("Version normalised from $v to $fixed");
+  if ( "$fixed" ne "$v" ) {
+    $self->log("Version normalised from $v to $fixed");
+  }
   return $fixed;
 };
 
@@ -120,7 +122,7 @@ Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 ATTRIBUTES
 

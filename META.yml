@@ -14,7 +14,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.4203
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.132830'
+generated_by: 'Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.133380'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -23,7 +23,7 @@ name: Dist-Zilla-Role-Version-Sanitize
 provides:
   Dist::Zilla::Role::Version::Sanitize:
     file: lib/Dist/Zilla/Role/Version/Sanitize.pm
-    version: 0.001001
+    version: 0.001002
 requires:
   Carp: 0
   Moose::Role: 0
@@ -36,7 +36,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Role-Version-Sanitize/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Role-Version-Sanitize
   repository: https://github.com/kentfredric/Dist-Zilla-Role-Version-Sanitize.git
-version: 0.001001
+version: 0.001002
 x_BuiltWith:
   modules:
     Carp: 1.32
@@ -70,7 +70,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::PodWeaver: 4.002
     Dist::Zilla::Plugin::Prereqs: 5.006
     Dist::Zilla::Plugin::Prereqs::MatchInstalled: 0.1.6
-    Dist::Zilla::Plugin::ReadmeAnyFromPod: 0.133290
+    Dist::Zilla::Plugin::ReadmeAnyFromPod: 0.133360
     Dist::Zilla::Plugin::ReadmeFromPod: 0.21
     Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
     Dist::Zilla::Plugin::RunExtraTests: 0.016
@@ -119,6 +119,16 @@ x_Dist_Zilla:
   perl:
     version: 5.019006
   plugins:
+    -
+      class: Dist::Zilla::Plugin::Bootstrap::lib
+      config:
+        Dist::Zilla::Role::Bootstrap:
+          distname: Dist-Zilla-Role-Version-Sanitize
+          fallback: 1
+          try_built: ~
+          try_built_method: mtime
+      name: Bootstrap::lib
+      version: 0.04000002
     -
       class: Dist::Zilla::Plugin::Git::NextVersion::Sanitized
       config:
@@ -364,7 +374,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ReadmeAnyFromPod
       name: '@Author::KENTNL/ReadmeAnyFromPod'
-      version: 0.133290
+      version: 0.133360
     -
       class: Dist::Zilla::Plugin::Test::CPAN::Changes
       name: '@Author::KENTNL/Test::CPAN::Changes'

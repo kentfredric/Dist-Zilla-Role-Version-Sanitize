@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
 
 VERSION
-    version 0.001001
+    version 0.001002
 
 ATTRIBUTES
   "normal_form"
