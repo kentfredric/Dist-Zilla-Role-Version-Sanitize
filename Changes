@@ -1,6 +1,7 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
 {{$NEXT}}
+ - Only debug message about normalisation when normalisation is applied
 
 0.001001 2013-12-01T19:26:20Z
  - Document attributes.

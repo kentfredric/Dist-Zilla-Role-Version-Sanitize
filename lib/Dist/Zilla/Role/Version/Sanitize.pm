@@ -154,7 +154,9 @@ around provide_version => sub {
   my $v      = $orig->( $self, @args );
   my $method = $normal_forms{ $self->normal_form };
   my $fixed  = $self->$method($v);
-  $self->log("Version normalised from $v to $fixed");
+  if ( "$fixed" ne "$v" ) {
+    $self->log("Version normalised from $v to $fixed");
+  }
   return $fixed;
 };
 
