@@ -189,7 +189,7 @@ Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
 
 =head1 VERSION
 
-version 0.001003
+version 0.002000
 
 =head1 ATTRIBUTES
 
