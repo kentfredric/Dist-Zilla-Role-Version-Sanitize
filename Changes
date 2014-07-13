@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
+0.001003 2014-07-13T20:21:21Z
+
 0.001002 2013-12-10T01:20:15Z
  - Only debug message about normalisation when normalisation is applied
 
@@ -7,8 +9,7 @@ Release history for Dist-Zilla-Role-Version-Sanitize
  - Document attributes.
 
  [Dependencies::Stats]
- - Dependencies changed since 0.001000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.001000, see misc/*.deps* for details
  - develop: +1 ↑1 -1
 
 0.001000 2013-12-01T10:03:15Z

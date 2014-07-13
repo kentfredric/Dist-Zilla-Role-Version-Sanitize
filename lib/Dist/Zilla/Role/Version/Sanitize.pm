@@ -2,17 +2,21 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Role::Version::Sanitize;
-BEGIN {
-  $Dist::Zilla::Role::Version::Sanitize::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Role::Version::Sanitize::VERSION = '0.001002';
-}
-
+$Dist::Zilla::Role::Version::Sanitize::VERSION = '0.001003';
 # ABSTRACT: Sanitize a version from a plugin
 
 use Moose::Role;
 use Moose::Util::TypeConstraints qw(enum);
+
+
+
+
+
+
+
+
+
+
 
 
 sub _normalize_normal {
@@ -57,11 +61,56 @@ sub _normalize_numify {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 my %normal_forms = (
   normal   => '_normalize_normal',
   normal_3 => '_normalize_normal_3',
   numify   => '_normalize_numify',
 );
+
+
+
+
+
+
+
 
 
 has normal_form => (
@@ -71,6 +120,22 @@ has normal_form => (
   lazy    => 1,
   default => sub { return 'numify' },
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has mantissa => (
@@ -122,7 +187,7 @@ Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
 
 =head1 VERSION
 
-version 0.001002
+version 0.001003
 
 =head1 ATTRIBUTES
 
@@ -200,7 +265,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
