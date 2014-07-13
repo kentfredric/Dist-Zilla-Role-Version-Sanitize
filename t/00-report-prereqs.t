@@ -111,8 +111,9 @@ my $static_prereqs = do { my $x = {
                                       'Carp' => '0',
                                       'Moose::Role' => '0',
                                       'Moose::Util::TypeConstraints' => '0',
-                                      'perl' => '5.006',
+                                      'perl' => '5.008',
                                       'strict' => '0',
+                                      'utf8' => '0',
                                       'version' => '0',
                                       'warnings' => '0'
                                     }
