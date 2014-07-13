@@ -7,6 +7,8 @@ our $VERSION = '0.002000';
 
 # ABSTRACT: Sanitize a version from a plugin
 
+# AUTHORITY
+
 use Moose::Role;
 use Moose::Util::TypeConstraints qw(enum);
 
