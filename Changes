@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
 {{$NEXT}}
+
+0.002000 2014-07-13T21:03:31Z
  [00 Major]
  - Some changes in packaging that might break downstreams that work by hand.
  - Misc other packaging cleanups
