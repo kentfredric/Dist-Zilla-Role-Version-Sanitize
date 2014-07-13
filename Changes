@@ -3,10 +3,10 @@ Release history for Dist-Zilla-Role-Version-Sanitize
 {{$NEXT}}
  [Dependencies::Stats]
  - Dependencies changed since 0.001002, see misc/*.deps* for details
- - build: ↑1
- - configure: ↑1
- - develop: +3 -4 (suggests: +2 -1)
- - test: +3 ↑1 (recommends: +2)
+ - build: -1
+ - configure: +1 -1 (recommends: +1)
+ - develop: +4 -6 (suggests: +2 -1)
+ - test: +3 ↓1 (recommends: +4)
 
 0.001002 2013-12-10T01:20:15Z
  - Only debug message about normalisation when normalisation is applied
