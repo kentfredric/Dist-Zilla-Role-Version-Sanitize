@@ -20,6 +20,7 @@ corpus/fake_dist_04/lib/T/Version/Sanitized.pm
 corpus/fake_dist_05/dist.ini
 corpus/fake_dist_05/lib/T/Version/Sanitized.pm
 dist.ini
+dist.ini.meta
 lib/Dist/Zilla/Role/Version/Sanitize.pm
 maint-travis-ci/README.mkdn
 maint-travis-ci/before_script.pl
