@@ -4,7 +4,7 @@ Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
 
 # VERSION
 
-version 0.001003
+version 0.002000
 
 # ATTRIBUTES
 
