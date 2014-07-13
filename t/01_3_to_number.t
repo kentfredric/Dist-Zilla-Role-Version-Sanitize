@@ -11,6 +11,8 @@ my $source        = Path::Tiny->new('.')->child('corpus')->child($dist);
 my $tempdir       = Path::Tiny->tempdir;
 my $chdir_tempdir = Path::Tiny->tempdir;
 
+require Dist::Zilla::Role::Version::Sanitize;
+
 rcopy( "$source", "$tempdir" );
 
 my $dist_ini = $tempdir->child('dist.ini');
