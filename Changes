@@ -1,11 +1,11 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
-0.001003 2014-07-13T20:22:24Z
+0.001003 2014-07-13T20:24:10Z
  [Dependencies::Stats]
  - Dependencies changed since 0.001002, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
- - develop: +3 ↑1 -3
+ - develop: +3 -4 (suggests: +2 -1)
  - test: +3 ↑1 (recommends: +2)
 
 0.001002 2013-12-10T01:20:15Z
