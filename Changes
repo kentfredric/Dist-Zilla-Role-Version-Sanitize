@@ -1,6 +1,14 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
 {{$NEXT}}
+ [00 Major]
+ - Some changes in packaging that might break downstreams that work by hand.
+ - Misc other packaging cleanups
+
+ [01 Tooling]
+ - Switched to ExtUtils::MakeMaker ( https://questhub.io/realm/perl/quest/5388cc12bbd0be5b2500011f )
+ - Toolchain Dependencies softened to recommendations instead of requirements
+
  [Dependencies::Stats]
  - Dependencies changed since 0.001002, see misc/*.deps* for details
  - build: -1
