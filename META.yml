@@ -25,7 +25,7 @@ name: Dist-Zilla-Role-Version-Sanitize
 provides:
   Dist::Zilla::Role::Version::Sanitize:
     file: lib/Dist/Zilla/Role/Version/Sanitize.pm
-    version: '0.002000'
+    version: '0.002001'
 requires:
   Carp: '0'
   Moose::Role: '0'
@@ -39,7 +39,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Role-Version-Sanitize/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Role-Version-Sanitize
   repository: https://github.com/kentfredric/Dist-Zilla-Role-Version-Sanitize.git
-version: '0.002000'
+version: '0.002001'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.141520'
@@ -433,7 +433,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 0.002000-source
+          tag: 0.002001-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -487,7 +487,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '0.002000'
+          tag: '0.002001'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
