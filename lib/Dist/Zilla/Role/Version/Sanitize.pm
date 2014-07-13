@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Role::Version::Sanitize;
-$Dist::Zilla::Role::Version::Sanitize::VERSION = '0.001003';
+
+our $VERSION = '0.002000';
+
 # ABSTRACT: Sanitize a version from a plugin
 
 use Moose::Role;
