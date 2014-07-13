@@ -1,5 +1,7 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Role::Version::Sanitize;
 
@@ -9,7 +11,7 @@ our $VERSION = '0.002000';
 
 # AUTHORITY
 
-use Moose::Role;
+use Moose::Role qw(has around);
 use Moose::Util::TypeConstraints qw(enum);
 
 =begin MetaPOD::JSON v1.1.0
@@ -24,13 +26,13 @@ use Moose::Util::TypeConstraints qw(enum);
 =cut
 
 sub _normalize_normal {
-  my ( $self, $orig ) = @_;
+  my ( undef, $orig ) = @_;
   require version;
   return version->parse($orig)->normal;
 }
 
 sub _normalize_normal_3 {
-  my ( $self, $orig ) = @_;
+  my ( undef, $orig ) = @_;
   require version;
   my $v = version->parse($orig)->normal;
   $v =~ s/\Av//msx;
@@ -176,5 +178,6 @@ around dump_config => sub {
 };
 
 no Moose::Role;
+no Moose::Util::TypeConstraints;
 
 1;
