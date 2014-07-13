@@ -4,7 +4,7 @@ Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
 
 # VERSION
 
-version 0.001002
+version 0.001003
 
 # ATTRIBUTES
 
@@ -12,13 +12,13 @@ version 0.001002
 
 Determines which [_normal form_](#normal-forms) is used.
 
-Default is : __`numify`__
+Default is : **`numify`**
 
 ## `mantissa`
 
 Determines the mandatory length of the `mantissa` for the [`numify`](#numify) normal form.
 
-Default is : __`6`__
+Default is : **`6`**
 
 Which yields:
 
@@ -28,13 +28,6 @@ Which yields:
     1000.001001
 
 Etc.
-
-{
-    "namespace":"Dist::Zilla::Role::Version::Sanitize",
-    "interface":"role"
-}
-
-
 
 # NORMAL FORMS
 
@@ -79,7 +72,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
