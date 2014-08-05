@@ -1,6 +1,10 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
 {{$NEXT}}
+ [00 Trivial]
+ - Switch repo to kentnl org
+ - updated t/ reporter
+
  [Dependencies::Stats]
  - Dependencies changed since 0.002000, see misc/*.deps* for details
  - configure: ↓1
