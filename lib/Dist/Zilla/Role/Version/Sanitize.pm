@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Role::Version::Sanitize;
 
-our $VERSION = '0.002001';
+our $VERSION = '0.002002';
 
 # ABSTRACT: Sanitize a version from a plugin
 
