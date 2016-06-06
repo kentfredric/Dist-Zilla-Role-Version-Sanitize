@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
 {{$NEXT}}
+ - Add VERSION to metaconfig.
+
  [Dependencies::Stats]
  - Dependencies changed since 0.002001, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)

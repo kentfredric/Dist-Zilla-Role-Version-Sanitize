@@ -168,11 +168,12 @@ around provide_version => sub {
 around dump_config => sub {
   my ( $orig, $self, @args ) = @_;
   my $config = $orig->( $self, @args );
-  my $own_config = {
-    normal_form => $self->normal_form,
-    mantissa    => $self->mantissa,
-  };
-  $config->{ q[] . __PACKAGE__ } = $own_config;
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  $localconf->{normal_form} = $self->normal_form;
+  $localconf->{mantissa}    = $self->mantissa;
+
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION;
   return $config;
 };
 
