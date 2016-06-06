@@ -1,11 +1,10 @@
-use 5.008;    # utf8
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 package Dist::Zilla::Role::Version::Sanitize;
 
-our $VERSION = '0.002001';
+our $VERSION = '0.002002';
 
 # ABSTRACT: Sanitize a version from a plugin
 
@@ -169,11 +168,12 @@ around provide_version => sub {
 around dump_config => sub {
   my ( $orig, $self, @args ) = @_;
   my $config = $orig->( $self, @args );
-  my $own_config = {
-    normal_form => $self->normal_form,
-    mantissa    => $self->mantissa,
-  };
-  $config->{ q[] . __PACKAGE__ } = $own_config;
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  $localconf->{normal_form} = $self->normal_form;
+  $localconf->{mantissa}    = $self->mantissa;
+
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION;
   return $config;
 };
 
@@ -194,7 +194,7 @@ Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
 
 =head1 VERSION
 
-version 0.002001
+version 0.002002
 
 =head1 ATTRIBUTES
 
@@ -268,11 +268,11 @@ And the length for mantissa is forced by C<mantissa>, either I<truncating> to C<
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2016 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
