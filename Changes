@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
 {{$NEXT}}
+
+0.002002 2016-06-06T22:54:09Z a3dac06
  - Add VERSION to metaconfig.
 
  [Dependencies::Stats]
