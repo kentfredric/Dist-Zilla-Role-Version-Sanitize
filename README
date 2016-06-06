@@ -1,72 +1,28 @@
-NAME
-    Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
+Dist::Zilla::Role::Version::Sanitize
 
-VERSION
-    version 0.002002
 
-ATTRIBUTES
-  "normal_form"
-    Determines which *normal form* is used.
 
-    Default is : "numify"
+INSTALLATION
 
-  "mantissa"
-    Determines the mandatory length of the "mantissa" for the "numify"
-    normal form.
+This is a Perl module distribution. It should be installed with whichever
+tool you use to manage your installation of Perl, e.g. any of
 
-    Default is : 6
+  cpanm .
+  cpan  .
+  cpanp -i .
 
-    Which yields:
+Consult http://www.cpan.org/modules/INSTALL.html for further instruction.
+Should you wish to install this module manually, the procedure is
 
-          1.001001
-         10.001001
-        100.001001
-       1000.001001
-
-    Etc.
-
-NORMAL FORMS
-  "normal"
-    Normalizes to the notation:
-
-        v1
-        v1.2
-        v1.2.3
-        v1.2.3.4
-
-  "normal_3"
-    Normalizes to the notation
-
-        1.2.3
-        1.2.3.4
-
-    Note: Due to the absence of the leading "v", 3, is the minimum number of
-    places that can be represented in this notation.
-
-    Accidentally normalizing to
-
-        1.2
-
-    In this form should raise a fatal exception.
-
-  "numify"
-    Normalizes to the notation
-
-        1.23456789
-        | ^------^--- The Mantissa
-        |
-        ^------------ Integer part.
-
-    And the length for mantissa is forced by "mantissa", either *truncating*
-    to "mantissa" length, or "paddding" to "mantissa" length with 0's
-
-AUTHOR
-    Kent Fredric <kentfredric@gmail.com>
+  perl Makefile.PL
+  make
+  make test
+  make install
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Kent Fredric
-    <kentfredric@gmail.com>.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+This software is copyright (c) 2016 by Kent Fredric
+<kentfredric@gmail.com>.
 
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
