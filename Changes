@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Role-Version-Sanitize
 
 {{$NEXT}}
+
+0.002003 2017-03-03T08:46:07Z 215ad08
  [Bugfix]
  - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot
  - Closes https://github.com/kentnl/Dist-Zilla-Role-Version-Sanitize/issues/2
