@@ -26,7 +26,7 @@ name: Dist-Zilla-Role-Version-Sanitize
 provides:
   Dist::Zilla::Role::Version::Sanitize:
     file: lib/Dist/Zilla/Role/Version/Sanitize.pm
-    version: '0.002003'
+    version: '0.002004'
 requires:
   Carp: '0'
   Moose::Role: '0'
@@ -39,4 +39,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Role-Version-Sanitize/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Role-Version-Sanitize
   repository: https://github.com/kentnl/Dist-Zilla-Role-Version-Sanitize.git
-version: '0.002003'
+version: '0.002004'

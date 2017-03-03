@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Role::Version::Sanitize;
 
-our $VERSION = '0.002003';
+our $VERSION = '0.002004';
 
 # ABSTRACT: Sanitize a version from a plugin
 
@@ -194,7 +194,7 @@ Dist::Zilla::Role::Version::Sanitize - Sanitize a version from a plugin
 
 =head1 VERSION
 
-version 0.002003
+version 0.002004
 
 =head1 ATTRIBUTES
 
